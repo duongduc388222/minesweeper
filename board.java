@@ -4,6 +4,7 @@
  * and tracks which cells have been visited by the player.
  * 
  * @author Leul, Duc, Hassan
+ * @date Sunday, Nov. 2, 2025
  * @version 1.0
  */
 
@@ -46,7 +47,29 @@ public class Board {
     }
 
     public void initMatrix(){
+        // Randomly place mines
+        int minesPlaced = 0;
+        java.util.Random random = new java.util.Random();
 
+        while (minesPlaced < mines) {
+            int randRow = random.nextInt(rows);
+            int randCol = random.nextInt(cols);
+
+            // Check if this position doesn't already have a mine
+            if (gameMatrix[randRow][randCol] != -1) {
+                gameMatrix[randRow][randCol] = -1;
+                minesPlaced++;
+            }
+        }
+
+        // Calculate adjacent mine counts for all non-mine cells
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (gameMatrix[i][j] != -1) {
+                    gameMatrix[i][j] = countAdjacentMines(i, j);
+                }
+            }
+        }
     }
 
     /**
@@ -97,7 +120,7 @@ public class Board {
         {   
             // We try to access a specific value. And if we do,
             // we return true,
-            int acessValue = gameMatrix[row][col]; 
+            int accessValue = gameMatrix[row][col]; 
             return true;
 
         }
@@ -187,13 +210,13 @@ public class Board {
 
             for (int j = 0; j < visitedMatrix[i].length; j++){
                 if (!visitedMatrix[i][j]) {
-                    System.out.print("* ");
+                    System.out.print(" * ");
                 } else {
 
                     if (gameMatrix[i][j] == -1) {
-                        System.out.print("# ");   
+                        System.out.print(" # ");   
                     } else {
-                        System.out.print(gameMatrix[i][j] + " ");
+                        System.out.print(" " + gameMatrix[i][j] + " ");
 
                     }
                 }
@@ -205,8 +228,35 @@ public class Board {
 
 
     /**
+     * Displays the full game board with all cells revealed.
+     * Used at the end of the game to show all mines and values.
+     */
+    public void displayFullBoard(){
+
+        System.out.println();
+
+        for (int j = 0; j < cols; j++){
+            System.out.print((j+1) + "c ");
+        }
+
+        System.out.println();
+
+        for (int i = 0; i < gameMatrix.length; i++){
+            for (int j = 0; j < gameMatrix[i].length; j++){
+                if (gameMatrix[i][j] == -1) {
+                    System.out.print(" # ");
+                } else {
+                    System.out.print(" " + gameMatrix[i][j] + " ");
+                }
+            }
+            System.out.println((i+1) + "L");
+        }
+    }
+
+
+    /**
      * Counts the total number of cells that have been visited.
-     * 
+     *
      * @return the number of visited cells
      */
     public int countVisited(){
