@@ -1,3 +1,12 @@
+/**
+ * @author Leul, Duc, Hassan
+ * @date Sunday, Nov. 2, 2025
+ This is the driver class that tests how the Minesweeper game works
+ It runs three test cases to show how a Minesweeper game behaves:
+   Test Case 1: A small 3x3 board where you lose by hitting a mine.
+   Test Case 2: A small 3x3 board where you win by opening all safe cells.
+   Test Case 3: A larger 5x5 board that ends when a mine is clicked.
+*/
 public class driver {
 
     public static void main(String[] args) {
@@ -8,6 +17,12 @@ public class driver {
         testCase3();
     }
 
+
+    /**
+     * Test Case 1:
+     * Creates a 3x3 board with 2 mines.
+     * It opens a few cells and ends up clicking a mine so you lose the game
+     */
     public static void testCase1() {
         System.out.println("\n A 3*3 board with 2 Mines\n");
 
@@ -30,10 +45,16 @@ public class driver {
         boolean hit = board.checkCells(0, 2);
         System.out.println("Hit mine: " + hit);
         board.displayFullBoard();
+
+        System.out.println("\nYou Lose! . You Clicked on a mine");
     }
 
 
-    
+     /**
+     * Test Case 2:
+     * Another 3x3 board with 2 mines.
+     * This time, all the safe cells are opened successfully so you win
+     */
     public static void testCase2() {
         System.out.println("\n  3x3 Board with 2 Mines- winning in this scenario\n");
         
@@ -59,6 +80,11 @@ public class driver {
         System.out.println("\nYou Win! All safe cells opened!");
     }
 
+    /**
+     * Test Case 3:
+     * A 5x5 board with 4 mines.
+     * Shows opening several safe cells and then hitting a mine at the end.
+     */
     public static void testCase3() {
         System.out.println("\n\nTEST CASE 3: 5x5 Board with 4 Mines\n");
         
@@ -88,6 +114,8 @@ public class driver {
         boolean hit = board.checkCells(3, 3);
         System.out.println("Hit mine: " + hit);
         board.displayFullBoard();
+
+         System.out.println("\nYou Lose! . You Clicked on a mine");
     }
 }
 
