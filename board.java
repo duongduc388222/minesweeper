@@ -1,11 +1,13 @@
 /**
+ * Descriptive paragraph: 
+ * 
  * The game board class for our Minesweeper game.
  * Manages the game matrix containing mines and adjacent mine counts,
  * and tracks which cells have been visited by the player.
  * 
  * @author Leul, Duc, Hassan
- * @date Sunday, Nov. 2, 2025
- * @version 1.0
+ * Date: Sunday, Nov. 2, 2025
+ * 
  */
 
 
@@ -45,6 +47,13 @@ public class Board {
         this.cols = test[0].length;
         this.visitedMatrix = new boolean[rows][cols];
     }
+
+
+    /**
+     * Randomly places the mines in our matrix and ensures there aren't mines
+     * in the same position.
+     * Calculates the number of adjacent mines and fills the game matrix.
+     */
 
     public void initMatrix(){
         // Randomly place mines

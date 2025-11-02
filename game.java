@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Game {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        
         System.out.println("Welcome to MINESWEEPER THE GAME made by Duc, Leul, and Hassan!");
         System.out.println("Please kindly provide the dimension of our Minesweeper grid.\n");
 
