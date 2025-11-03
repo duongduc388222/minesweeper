@@ -1,3 +1,24 @@
+/**
+ * Descriptive paragraph: 
+ * 
+ * This is the Game Loop for the interactive option. 
+ * It will prompt the user to play the game, starting by
+ * letting the user choose the dimensions and the amount 
+ * of mines, and also let them successively choose their move
+ * to play. This file also have many error handlings implementations
+ * like not allowing more mines than cells or out-of-index moves. We prompt
+ * the user to choose again if these were to happen
+ * 
+ * A more descriptive paragraph of the overall features will be in
+ * Main.java
+ *
+ * 
+ * 
+ * @author Leul, Duc, Hassan
+ * Date: Sunday, Nov. 2, 2025
+ * 
+ */
+
 import java.util.Scanner;
 
 public class Game {

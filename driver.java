@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
  * @author Leul, Duc, Hassan
  * @date Sunday, Nov. 2, 2025
@@ -8,13 +7,9 @@
    Test Case 2: A small 3x3 board where you win by opening all safe cells.
    Test Case 3: A larger 5x5 board that ends when a mine is clicked.
 */
-public class driver {
-=======
 public class Driver {
->>>>>>> aa8c8bdaf331e1d5a10a200930af4f21fcb288b4
-
     public static void main(String[] args) {
-        System.out.println("driver test\n");
+        System.out.println("Welcome to the Driver test for MINESWEEPER THE GAME\nmade by Duc, Leul, and Hassan\n");
         
         testCase1();
         testCase2();

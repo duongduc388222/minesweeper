@@ -1,4 +1,4 @@
-/**
+/*
  * Descriptive paragraph: 
  * 
  * The game board class for our Minesweeper game.
